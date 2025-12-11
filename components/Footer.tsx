@@ -1,7 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-// The import is kept but the navLinks array is no longer used for the list population
-import { navLinks } from './Navbar'; 
 import { Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
 import { Button } from './Button'; 
 

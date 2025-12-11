@@ -94,7 +94,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => (
             
             {/* View Project Link */}
             <Link 
-                href={`/portfolio/${project.id}`} 
+                href={`#`} ///portfolio/${project.id}
                 className="text-ta-teal font-semibold flex items-center group-hover:translate-x-1 transition-transform"
             >
                 View Details <ChevronRight size={18} className="ml-1" />

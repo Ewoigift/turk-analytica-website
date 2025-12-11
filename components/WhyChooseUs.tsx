@@ -1,10 +1,17 @@
 // components/WhyChooseUs.tsx
 
-import Image from 'next/image'; // ✅ NEW IMPORT
-import { IconRenderer } from '@/components/IconRenderer'; 
+import Image from 'next/image';
+import { IconRenderer } from '@/components/IconRenderer';
 
-// Data for features/values
-const features = [
+// Define the icon names type to match IconRenderer
+type IconName = 'Code' | 'MessageSquare' | 'Smartphone' | 'Monitor' | 'Target' | 'Users' | 'Zap';
+
+// ✅ Add type annotation to features array
+const features: Array<{
+  iconName: IconName;
+  title: string;
+  description: string;
+}> = [
   {
     iconName: "Target", 
     title: "Goal-Oriented Solutions",
@@ -29,7 +36,7 @@ export const WhyChooseUs = () => {
         
         <div className="flex flex-col lg:flex-row gap-12">
           
-          {/* Left Column: Text Content (Unchanged) */}
+          {/* Left Column: Text Content */}
           <div className="lg:w-1/2">
             <h2 className="text-sm font-heading font-semibold text-ta-teal uppercase tracking-widest mb-2">
               Our Value Proposition
@@ -60,15 +67,13 @@ export const WhyChooseUs = () => {
           
           {/* Right Column: Image Implementation */}
           <div className="lg:w-1/2 flex items-center justify-center">
-            {/* The outer div manages height, inner div holds the image */}
             <div className="relative w-full h-80 lg:h-full lg:min-h-[400px] overflow-hidden rounded-xl shadow-2xl">
               
-              {/* ✅ Image Component Code */}
               <Image
-                src="/images/why-choose-us.jpg" // ⬅️ Replace this path if your image is elsewhere
+                src="/images/why-choose-us.jpg"
                 alt="A diverse team collaborating on digital strategy, representing our commitment."
                 fill
-                className="object-cover" // Ensures the image covers the container without distortion
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
